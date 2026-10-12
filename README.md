@@ -1,7 +1,6 @@
 # Code-Hallucination-Classifier Prototype
 
 > [!WARNING]
-> **Running this code executes untrusted, model-generated Python.**
 > The oracle executor (`src/oracle_executor.py`) and the dataset generator
 > (`scripts/generate_oracle_dataset.py`) run model-generated code in a plain child
 > process (`subprocess.run([sys.executable, file])`) with **your** filesystem and
@@ -93,9 +92,6 @@ Each sample's label is determined by executing the code against the MBPP test as
 
 ### Generating the dataset yourself
 
-⚠️ Executes model-generated code — use a disposable container or VM. The output will differ
-from the committed dataset (unseeded sampling, see above).
-
 ```bash
 python scripts/generate_oracle_dataset.py \
   --mbpp-path /path/to/mbpp.jsonl \
@@ -173,8 +169,6 @@ A proportion whose point estimate is 1 instead gets an exact Clopper–Pearson i
 ---
 
 ## Running the classifier
-
-⚠️ Phase 3 executes model-generated code — use a disposable container or VM.
 
 ```bash
 # Qwen 2.5 Coder

@@ -30,9 +30,6 @@ dev = [
     "pytest-cov>=4.0",
 ]
 
-[project.scripts]
-classify = "classify_unclassified_v6:run"
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]

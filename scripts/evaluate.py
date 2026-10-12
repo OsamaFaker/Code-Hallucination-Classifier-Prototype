@@ -2,9 +2,9 @@
 scripts/evaluate.py — compute accuracy, F1, and confusion matrix for any results file.
 
 Usage:
-    python scripts/evaluate.py results/mbpp_oracle_450_qwen_results.json
-    python scripts/evaluate.py results/mbpp_oracle_450_qwen_results.json \\
-                               results/mbpp_oracle_450_qwen_enhanced_results.json
+    python scripts/evaluate.py results/mbpp_oracle_450_balanced_qwen_enhanced_results.json
+    python scripts/evaluate.py results/mbpp_oracle_450_balanced_qwen_enhanced_results.json \\
+                               results/mbpp_oracle_450_balanced_llama3_enhanced_results.json
 """
 import argparse
 import json

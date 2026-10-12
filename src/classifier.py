@@ -119,7 +119,7 @@ class CodeClassifier:
                 raise RuntimeError(f"Failed to initialize LLM Verifier: {e}")
         else:
             # No LLM provider configured — verifier is optional; classify_static still works.
-            # Callers that require the verifier (e.g. classify_unclassified_v6.py) check
+            # Callers that require the verifier (e.g. scripts/classify.py) check
             # self._llm_verifier and exit with a clear message if it is None.
             pass
 

@@ -8,8 +8,8 @@ are loaded automatically by CodeClassifier when enable_calibration=True.
 
 Usage:
     python scripts/calibrate.py \
-        --results results/mbpp_oracle_450_balanced_qwen_results.json \
-                  results/mbpp_oracle_450_balanced_llama3_results.json
+        --results results/mbpp_oracle_450_balanced_qwen_enhanced_results.json \
+                  results/mbpp_oracle_450_balanced_llama3_enhanced_results.json
 """
 import argparse
 import json

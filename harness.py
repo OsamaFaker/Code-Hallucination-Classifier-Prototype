@@ -2,7 +2,7 @@
 v6 evaluation harness — classify 500 samples with a local LLM verifier.
 
 Usage:
-    python classify_unclassified_v6.py [--model qwen|llama3] [--output PATH] [--workers N]
+    python scripts/classify.py [--model qwen|llama3] [--output PATH] [--workers N]
 
 Default model is qwen (qwen2.5-coder:7b), the dissertation baseline.
 See README.md § "Choosing the verifier model" for details.
@@ -109,9 +109,9 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  python classify_unclassified_v6.py --model qwen\n"
-            "  python classify_unclassified_v6.py --model llama3 --workers 4\n"
-            "  python classify_unclassified_v6.py --model qwen --output my_results.json\n"
+            "  python scripts/classify.py --model qwen\n"
+            "  python scripts/classify.py --model llama3 --workers 4\n"
+            "  python scripts/classify.py --model qwen --output my_results.json\n"
         ),
     )
     parser.add_argument(

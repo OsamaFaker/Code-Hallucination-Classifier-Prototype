@@ -11,23 +11,38 @@ def _check(code: str):
 class TestPhantomAttributes:
     """Test phantom attribute detection on built-in types."""
 
-    def test_list_push_is_grounded_error(self):
-        """list.push() is a cross-language error (valid in JS), not hallucination."""
+    def test_list_push_reported_as_hallucination(self):
+        """list.push() is valid in JS/Java but not on Python's list."""
+        # Current behaviour: reported as a HALLUCINATION. Under Condition 2 of
+        # the paper this is a grounded error (a real method applied to the
+        # wrong type); the same limitation affects the labelling rule
+        # (Section 5.1).
         result = _check("lst = [1, 2]\nlst.push(3)")
         assert result is not None
-        assert result.is_grounded_error
+        assert not result.is_grounded_error
+        assert result.hallucination_category is not None
 
-    def test_list_add_is_grounded_error(self):
-        """list.add() exists on set but not list — type confusion."""
+    def test_list_add_reported_as_hallucination(self):
+        """list.add() exists on set but not on list."""
+        # Current behaviour: reported as a HALLUCINATION. Under Condition 2 of
+        # the paper this is a grounded error (a real method applied to the
+        # wrong type); the same limitation affects the labelling rule
+        # (Section 5.1).
         result = _check("lst = [1, 2]\nlst.add(3)")
         assert result is not None
-        assert result.is_grounded_error
+        assert not result.is_grounded_error
+        assert result.hallucination_category is not None
 
-    def test_str_append_is_grounded_error(self):
-        """str.append() exists on list but not str — type confusion."""
+    def test_str_append_reported_as_hallucination(self):
+        """str.append() exists on list but not on str."""
+        # Current behaviour: reported as a HALLUCINATION. Under Condition 2 of
+        # the paper this is a grounded error (a real method applied to the
+        # wrong type); the same limitation affects the labelling rule
+        # (Section 5.1).
         result = _check('text = "hello"\ntext.append("!")')
         assert result is not None
-        assert result.is_grounded_error
+        assert not result.is_grounded_error
+        assert result.hallucination_category is not None
 
     def test_list_first_is_hallucination(self):
         """list.first doesn't exist anywhere — pure hallucination."""

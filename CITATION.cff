@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the article below."
+title: "Code-Hallucination-Classifier Prototype"
+type: software
+version: "1.0-tosem"
+license: MIT
+repository-code: "https://github.com/OsamaFaker/Code-Hallucination-Classifier-Prototype"
+authors:
+  - family-names: Faker
+    given-names: Osama
+    orcid: "https://orcid.org/0000-0002-9281-7944"
+    affiliation: "Atilim University"
+  - family-names: Toker
+    given-names: Sacip
+    orcid: "https://orcid.org/0000-0003-1437-6642"
+    affiliation: "Cankaya University"
+preferred-citation:
+  type: article
+  title: "Distinguishing Errors from Hallucinations in LLM-Generated Code: A Grounding-Based Theoretical Framework"
+  authors:
+    - family-names: Faker
+      given-names: Osama
+      orcid: "https://orcid.org/0000-0002-9281-7944"
+      affiliation: "Atilim University"
+    - family-names: Toker
+      given-names: Sacip
+      orcid: "https://orcid.org/0000-0003-1437-6642"
+      affiliation: "Cankaya University"
+  journal: "ACM Transactions on Software Engineering and Methodology"
+  status: submitted
